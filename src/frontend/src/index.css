@@ -1,0 +1,134 @@
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/assets/fonts/PlayfairDisplay.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cream/Ivory background */
+    --background: 0.97 0.01 80;
+    --foreground: 0.18 0.03 260;
+
+    /* Card: warm ivory */
+    --card: 0.99 0.005 80;
+    --card-foreground: 0.18 0.03 260;
+
+    /* Popover */
+    --popover: 0.99 0.005 80;
+    --popover-foreground: 0.18 0.03 260;
+
+    /* Primary: deep maroon */
+    --primary: 0.36 0.14 15;
+    --primary-foreground: 0.97 0.01 80;
+
+    /* Secondary: muted gold */
+    --secondary: 0.88 0.05 85;
+    --secondary-foreground: 0.25 0.04 30;
+
+    /* Muted */
+    --muted: 0.92 0.015 70;
+    --muted-foreground: 0.5 0.04 60;
+
+    /* Accent: rich gold */
+    --accent: 0.72 0.14 72;
+    --accent-foreground: 0.18 0.03 260;
+
+    /* Destructive */
+    --destructive: 0.45 0.18 25;
+    --destructive-foreground: 0.97 0.01 80;
+
+    /* Borders */
+    --border: 0.88 0.03 70;
+    --input: 0.88 0.03 70;
+    --ring: 0.36 0.14 15;
+
+    --radius: 0.5rem;
+
+    /* Charts */
+    --chart-1: 0.36 0.14 15;
+    --chart-2: 0.72 0.14 72;
+    --chart-3: 0.3 0.1 250;
+    --chart-4: 0.6 0.1 120;
+    --chart-5: 0.55 0.12 45;
+
+    /* Sidebar */
+    --sidebar: 0.99 0.005 80;
+    --sidebar-foreground: 0.18 0.03 260;
+    --sidebar-primary: 0.36 0.14 15;
+    --sidebar-primary-foreground: 0.97 0.01 80;
+    --sidebar-accent: 0.92 0.015 70;
+    --sidebar-accent-foreground: 0.18 0.03 260;
+    --sidebar-border: 0.88 0.03 70;
+    --sidebar-ring: 0.36 0.14 15;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+/* Custom utility classes */
+.text-gold {
+  color: oklch(0.72 0.14 72);
+}
+
+.bg-maroon {
+  background-color: oklch(0.36 0.14 15);
+}
+
+.bg-deep-navy {
+  background-color: oklch(0.22 0.05 260);
+}
+
+.text-cream {
+  color: oklch(0.97 0.01 80);
+}
+
+.border-gold {
+  border-color: oklch(0.72 0.14 72);
+}
+
+/* Decorative gold divider */
+.gold-divider {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    oklch(0.72 0.14 72),
+    transparent
+  );
+}
+
+/* Texture overlay for fabric feel */
+.fabric-texture {
+  background-image: radial-gradient(
+      ellipse at 20% 50%,
+      oklch(0.36 0.14 15 / 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      oklch(0.72 0.14 72 / 0.06) 0%,
+      transparent 50%
+    );
+}
